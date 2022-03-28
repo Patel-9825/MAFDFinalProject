@@ -21,6 +21,7 @@
                assign to "../../../data/report.out"
                organization is line sequential.
 
+     
       *
        data division.
        file section.
@@ -29,73 +30,77 @@
            data record is input-line
            record contains 36 characters.
        01 input-line.
-         05 TransactionCode pic X.
-           88 Transactioncode-88-valid
+          05 TransactionCode  pic X.
+             88 Transactioncode-88-valid
                 value 'S', 'R', 'L'.
-         05 TransactionAmount pic 9(5)V99.
-         05 PaymentType pic XX.
-           88 Paymentype-valid
+          05 TransactionAmount pic 9(5)V99.
+          05 PaymentType pic XX.
+             88 Paymentype-valid
                 value 'CA', 'CB', 'DB'.
-         05 StoreNumber pic 99.
-           88 Storenumber-valid
+          05 StoreNumber pic 99.
+             88 Storenumber-valid
                 value 01, 02, 03, 04, 05, 12.
-         05 InvoiceNumber.
-           10 alphabets-invoicenumber pic x(2).
-             88 xx-invoicenumber-valid
-                value 'AB', 'AC', 'AD', 'AE', 'BA', 'BC', 'BD', 'BE',
-                'CA', 'CB', 'CD', 'CE', 'DA', 'DB', 'DC', 'DE', 'EA',
-                'EB', 'EC', 'ED'.
-           10 dash pic x(1) value '-'.
-           10 number-invoicenumber pic 9(6).
-         05 SKUCode pic X(15).
+          05 InvoiceNumber.
+             10 alphabets-invoicenumber pic x(2).
+                88 xx-invoicenumber-valid
+                value 'AB','AC','AD','AE',
+                      'BA','BC','BD','BE',
+                      'CA','CB','CD','CE',
+                      'DA','DB','DC','DE',
+                      'EA','EB','EC','ED'.
+             10 dash pic x(1) value '-'.
+             10 number-invoicenumber pic 9(6).
+          05 SKUCode pic X(15).
 
-       fd valid-file
+
+       fd valid-file       
           data record is valid-line
           record contains 36 characters.
-
-       01 valid-line pic x(23).
+             
+       01 valid-line                        pic x(36).
 
        fd invalid-file
           data record is invalid-line
           record contains 36 characters.
-
-       01 invalid-line pic x(23).
-
+             
+       01 invalid-line                      pic x(36).
+       
        fd report-file
        data record is report-line
        record contains 120 characters.
-
-       01 report-line pic x(120).
-
+             
+       01 report-line                       pic x(120).
+       
        working-storage section.
-
+           
        01 ws-errors-in-data-file.
-         05 ws-error-in-transactioncode pic x(28) value
-                                        "Transaction code is invalid.".
-         05 ws-error-in-transactionamount pic x(33) value
-                                    "Transaction amount is not numeric".
-         05 ws-error-in-paymenttype pic x(43) value
-                          "Payment type is not valid i.e, CA, CR or DB".
-         05 ws-error-in-store-number pic x(55) value
-              "Store number is not valid (must be from 01 to 05 or 12)".
-         05 ws-error-in-invoice-code pic x(36) value
-                                  "First two characters cannot be same".
-         05 ws-error-in-code-range pic x(47) value
-                      "First two characters need to be A, B, C, D or E".
-         05 ws-error-in-dash pic x(48) value
-                     " '-' should be at third position in invoice code".
-         05 ws-error-in-rangeofinvoice pic x(46) value
-                       "Invoice number must be between 900000 & 100000".
-         05 ws-error-in-typeofinvoice pic x(29) value
-                                      "Invoice number is not numeric".
-         05 ws-error-in-SKUCodeempty pic x(36) value
-                                     "SKU code cannot be empty.".
+         05 ws-error-in-transactioncode pic x(28) 
+            value "Transaction code is invalid.".
+         05 ws-error-in-transactionamount pic x(33) 
+            value "Transaction amount is not numeric".
+         05 ws-error-in-paymenttype pic x(43) 
+            value "Payment type is not valid i.e, CA, CR or DB".
+         05 ws-error-in-store-number pic x(55) 
+            value 
+            "Store number is not valid (must be from 01 to 05 or 12)".
+         05 ws-error-in-invoice-code pic x(36) 
+            value  "First two characters cannot be same".
+         05 ws-error-in-code-range pic x(47) 
+            value "First two characters need to be A, B, C, D or E".
+         05 ws-error-in-dash pic x(48) 
+            value " '-' should be at third position in invoice code".
+         05 ws-error-in-rangeofinvoice pic x(46) 
+            value "Invoice number must be between 900000 & 100000".
+         05 ws-error-in-typeofinvoice pic x(29) 
+            value "Invoice number is not numeric".
+         05 ws-error-in-SKUCodeempty pic x(36) 
+            value "SKU code cannot be empty.".
 
        01 report-line-1.
          05 filler pic x(25) value spaces.
          05 filler pic x(19) value "EDIT PROGRAM RESULT".
          05 filler pic x(29) value spaces.
-
+         
        01 ws-record-with-error.
          05 filler pic x(9) value "Record  :".
          05 ws-record-num-data pic 9(3).
@@ -110,8 +115,9 @@
          05 filler pic x(4).
          05 filler pic x(17) value "Invalid records: ".
          05 filler pic x(1).
-         05 invalid-records pic 99.
+         05 invalid-records pic 999.
          05 filler pic x(30).
+
 
        77 ws-eof-flag pic x value 'n'.
        77 ws-input-number-check pic 999.
@@ -122,23 +128,28 @@
        77 ws-one-lakh pic 9(6) value 100000.
        77 ws-nine-lakh pic 9(6) value 900000.
        77 ws-page-count pic 99 value 0.
+       77 ws-zero pic 9 value 0.
+
+       01 ws-invoice-code-separate.
+         05 ws-invoice-1 pic x.
+         05 ws-invoice-2 pic x.
        procedure division.
 
-           open input input-file.
+           open input  input-file.
            open output valid-file,
-             invalid-file,
-             report-file.
+                       invalid-file,
+                       report-file.
 
            write report-line from report-line-1.
            move spaces to report-line.
 
            read input-file
-               at end
-                   move 'y' to ws-eof-flag.
+           at end
+           move 'y' to ws-eof-flag.
 
            perform 100-process-files
-             varying ws-page-count from 1 by 1
-             until ws-eof-flag = 'y'.
+           varying ws-page-count       from 1 by 1
+           until ws-eof-flag = 'y'.
 
            move ws-valid-entry to valid-records.
            move ws-invalid-entry to invalid-records.
@@ -152,56 +163,66 @@
            perform 300-validation until ws-eof-flag = 'y'.
 
        300-validation.
+          
            move spaces to report-line.
-
+           move alphabets-invoicenumber to ws-invoice-code-separate.
            add ws-one to ws-input-number-check.
            if not (Transactioncode-88-valid) then
                add ws-one to ws-error-number-count
                write report-line from ws-error-in-transactioncode
+           else 
            end-if.
 
            if not (TransactionAmount is numeric) then
                add ws-one to ws-error-number-count
                write report-line from ws-error-in-transactionamount
+           else
            end-if.
 
            if not (Paymentype-valid) then
                add ws-one to ws-error-number-count
                write report-line from ws-error-in-paymenttype
+           else
            end-if.
 
            if not (Storenumber-valid) then
                add ws-one to ws-error-number-count
                write report-line from ws-error-in-store-number
+           else
            end-if.
 
            if not (xx-invoicenumber-valid) then
                add ws-one to ws-error-number-count
                write report-line from ws-error-in-invoice-code
+           else
            end-if.
 
            if not (dash = "-") then
                add ws-one to ws-error-number-count
                write report-line from ws-error-in-dash
+           else
            end-if.
 
            if not (number-invoicenumber is numeric)
                add ws-one to ws-error-number-count
                write report-line from ws-error-in-typeofinvoice
+           else
            end-if.
 
-           if not (InvoiceNumber > ws-one-lakh and InvoiceNumber <
-             ws-nine-lakh)
+           if not (number-invoicenumber > ws-one-lakh and 
+           number-invoicenumber < ws-nine-lakh)
                add ws-one to ws-error-number-count
                write report-line from ws-error-in-rangeofinvoice
+           else
            end-if.
 
            if (SKUCode = space) then
                add ws-one to ws-error-number-count
                write report-line from ws-error-in-SKUCodeempty
+           else
            end-if.
 
-           if (ws-error-number-count = 0) then
+           if (ws-error-number-count = ws-zero) then
                add ws-one to ws-valid-entry
                write valid-line from input-line
            else
@@ -210,9 +231,11 @@
                write report-line from ws-record-with-error
                write invalid-line from input-line
            end-if.
-  -
+  -     
            move zeroes to ws-error-number-count.
 
-           goback.
+           read input-file
+               at end
+                   move 'y' to ws-eof-flag.
 
        end program Edit.

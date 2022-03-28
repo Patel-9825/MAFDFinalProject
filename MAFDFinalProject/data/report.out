@@ -1,3 +1,211 @@
                          EDIT PROGRAM RESULT
-Invoice number must be between 900000 & 100000
 Record  :001
+Payment type is not valid i.e, CA, CR or DB
+Record  :003
+Payment type is not valid i.e, CA, CR or DB
+Record  :005
+First two characters cannot be same
+SKU code cannot be empty.
+Record  :006
+Payment type is not valid i.e, CA, CR or DB
+First two characters cannot be same
+Record  :007
+Invoice number must be between 900000 & 100000
+Record  :009
+Payment type is not valid i.e, CA, CR or DB
+Record  :011
+Payment type is not valid i.e, CA, CR or DB
+Invoice number is not numeric
+Record  :014
+Payment type is not valid i.e, CA, CR or DB
+Record  :017
+Payment type is not valid i.e, CA, CR or DB
+Record  :019
+Payment type is not valid i.e, CA, CR or DB
+Record  :021
+First two characters cannot be same
+Record  :023
+First two characters cannot be same
+Record  :024
+Payment type is not valid i.e, CA, CR or DB
+Record  :025
+Payment type is not valid i.e, CA, CR or DB
+Record  :028
+Payment type is not valid i.e, CA, CR or DB
+SKU code cannot be empty.
+Record  :030
+First two characters cannot be same
+Record  :031
+Payment type is not valid i.e, CA, CR or DB
+Record  :032
+Transaction amount is not numeric
+Payment type is not valid i.e, CA, CR or DB
+Record  :034
+Payment type is not valid i.e, CA, CR or DB
+Record  :036
+Payment type is not valid i.e, CA, CR or DB
+Record  :038
+Payment type is not valid i.e, CA, CR or DB
+Record  :040
+Payment type is not valid i.e, CA, CR or DB
+Invoice number is not numeric
+Invoice number must be between 900000 & 100000
+Record  :044
+First two characters cannot be same
+Record  :045
+Transaction code is invalid.
+Transaction amount is not numeric
+Payment type is not valid i.e, CA, CR or DB
+Record  :047
+Payment type is not valid i.e, CA, CR or DB
+SKU code cannot be empty.
+Record  :049
+Transaction code is invalid.
+Payment type is not valid i.e, CA, CR or DB
+Record  :051
+Payment type is not valid i.e, CA, CR or DB
+Record  :052
+Payment type is not valid i.e, CA, CR or DB
+SKU code cannot be empty.
+Record  :054
+Payment type is not valid i.e, CA, CR or DB
+Record  :056
+Payment type is not valid i.e, CA, CR or DB
+Record  :057
+Transaction code is invalid.
+Record  :059
+Payment type is not valid i.e, CA, CR or DB
+Record  :060
+Payment type is not valid i.e, CA, CR or DB
+Record  :062
+First two characters cannot be same
+Record  :063
+Payment type is not valid i.e, CA, CR or DB
+First two characters cannot be same
+Record  :064
+Payment type is not valid i.e, CA, CR or DB
+Record  :068
+Payment type is not valid i.e, CA, CR or DB
+Record  :071
+First two characters cannot be same
+Record  :072
+Payment type is not valid i.e, CA, CR or DB
+Record  :073
+Payment type is not valid i.e, CA, CR or DB
+Record  :074
+Transaction code is invalid.
+Payment type is not valid i.e, CA, CR or DB
+Record  :075
+Payment type is not valid i.e, CA, CR or DB
+Record  :079
+Payment type is not valid i.e, CA, CR or DB
+Store number is not valid (must be from 01 to 05 or 12)
+Record  :081
+Payment type is not valid i.e, CA, CR or DB
+Record  :083
+Store number is not valid (must be from 01 to 05 or 12)
+Record  :085
+Payment type is not valid i.e, CA, CR or DB
+First two characters cannot be same
+Record  :087
+Payment type is not valid i.e, CA, CR or DB
+Invoice number must be between 900000 & 100000
+Record  :090
+First two characters cannot be same
+Invoice number must be between 900000 & 100000
+Record  :091
+First two characters cannot be same
+Invoice number must be between 900000 & 100000
+Record  :092
+Payment type is not valid i.e, CA, CR or DB
+Invoice number must be between 900000 & 100000
+Record  :093
+Invoice number must be between 900000 & 100000
+Record  :094
+Payment type is not valid i.e, CA, CR or DB
+Invoice number must be between 900000 & 100000
+Record  :095
+Invoice number must be between 900000 & 100000
+Record  :096
+Transaction amount is not numeric
+Payment type is not valid i.e, CA, CR or DB
+Store number is not valid (must be from 01 to 05 or 12)
+Invoice number must be between 900000 & 100000
+Record  :097
+Invoice number is not numeric
+Invoice number must be between 900000 & 100000
+Record  :098
+First two characters cannot be same
+Invoice number is not numeric
+Invoice number must be between 900000 & 100000
+Record  :099
+Payment type is not valid i.e, CA, CR or DB
+Record  :101
+Payment type is not valid i.e, CA, CR or DB
+Record  :104
+Payment type is not valid i.e, CA, CR or DB
+SKU code cannot be empty.
+Record  :106
+Payment type is not valid i.e, CA, CR or DB
+Record  :108
+Transaction amount is not numeric
+Payment type is not valid i.e, CA, CR or DB
+Record  :110
+Payment type is not valid i.e, CA, CR or DB
+Record  :112
+First two characters cannot be same
+Record  :113
+Payment type is not valid i.e, CA, CR or DB
+Record  :114
+Payment type is not valid i.e, CA, CR or DB
+Record  :116
+Payment type is not valid i.e, CA, CR or DB
+Record  :120
+Transaction amount is not numeric
+Payment type is not valid i.e, CA, CR or DB
+Record  :123
+Payment type is not valid i.e, CA, CR or DB
+Store number is not valid (must be from 01 to 05 or 12)
+First two characters cannot be same
+SKU code cannot be empty.
+Record  :125
+Transaction code is invalid.
+Payment type is not valid i.e, CA, CR or DB
+Record  :127
+Payment type is not valid i.e, CA, CR or DB
+Record  :128
+Payment type is not valid i.e, CA, CR or DB
+Record  :130
+Invoice number is not numeric
+Record  :131
+Payment type is not valid i.e, CA, CR or DB
+Record  :132
+Payment type is not valid i.e, CA, CR or DB
+Record  :133
+Transaction code is invalid.
+Record  :135
+Payment type is not valid i.e, CA, CR or DB
+First two characters cannot be same
+Record  :136
+Payment type is not valid i.e, CA, CR or DB
+Record  :138
+Payment type is not valid i.e, CA, CR or DB
+Record  :140
+First two characters cannot be same
+Record  :143
+Payment type is not valid i.e, CA, CR or DB
+Record  :144
+Payment type is not valid i.e, CA, CR or DB
+Record  :147
+Payment type is not valid i.e, CA, CR or DB
+Invoice number is not numeric
+Record  :149
+Payment type is not valid i.e, CA, CR or DB
+Record  :150
+Transaction code is invalid.
+Payment type is not valid i.e, CA, CR or DB
+Store number is not valid (must be from 01 to 05 or 12)
+Record  :151
+Store number is not valid (must be from 01 to 05 or 12)
+Record  :152
+Valid records:  066    Invalid records:  086
