@@ -10,11 +10,11 @@
                organization is line sequential.
 
            select valid-file
-               assign to "../../../data/valid.out"
+               assign to "../../../data/valid.dat"
                organization is line sequential.
 
            select invalid-file
-               assign to "../../../data/invalid.out"
+               assign to "../../../data/invalid.dat"
                organization is line sequential.
 
            select report-file
@@ -148,8 +148,8 @@
            move spaces                      to report-line.
 
            read input-file
-           at end
-           move 'y' to ws-eof-flag.
+               at end
+               move 'y' to ws-eof-flag.
 
            perform 100-process-files
            varying ws-page-count       from 1 by 1
@@ -159,7 +159,10 @@
            move ws-invalid-entry            to invalid-records.
            write report-line from output-line.
 
-           close input-file, valid-file, invalid-file, report-file.
+           close input-file,
+                 valid-file,
+                 invalid-file,
+                 report-file.
            goback.
 
        100-process-files.
